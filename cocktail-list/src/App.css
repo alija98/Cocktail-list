@@ -1,11 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Bitter";
 }
-#root {
+:root {
+  --primaryColor: #476a2e;
+}
+html {
   background-color: rgb(225, 232, 238);
 }
+
 .navbar-section {
   width: 100%;
   background-color: white;
@@ -27,11 +33,15 @@ a {
 .navbar-right li {
   display: inline;
   text-decoration: none;
-  padding: 0 5px;
+  padding: 0 8px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 500;
 }
 .search-section {
   width: 40%;
-  margin: 7rem auto;
+
+  margin: 6rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,9 +55,13 @@ a {
 }
 
 .search-form label {
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
   display: block;
   width: 100%;
   padding: 1.5rem 0;
+  color: var(--primaryColor);
+  font-weight: 600;
 }
 .search-form input {
   width: 100%;
@@ -57,6 +71,7 @@ a {
   outline: none;
   border: none;
   background-color: rgb(225, 232, 238);
+  padding-left: 3px;
 }
 .cocktail-list-section {
   width: 80%;
@@ -64,15 +79,24 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(225, 232, 238);
 }
+
 .section-title {
   margin: 1.5rem 0;
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 .cocktail {
   width: 30%;
+  height: auto;
   border-radius: 0.5rem;
   margin-bottom: 3rem;
   box-shadow: 5px 10px 14px 0px rgba(0, 0, 0, 0.68);
+  background-color: white;
+}
+.cocktail-footer {
+  height: auto;
 }
 
 .img-container {
@@ -83,6 +107,11 @@ a {
 .img-container img {
   width: 100%;
   height: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.img-container img:hover {
+  transform: scale(1.01);
 }
 .cocktails-center {
   width: 100%;
@@ -93,23 +122,27 @@ a {
 
 .cocktail-footer h3 {
   text-transform: uppercase;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .cocktail-footer h4 {
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
 }
 .cocktail-footer p {
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
+  margin-bottom: 10px;
 }
 .cocktail-footer a {
-  margin: 0.5rem 1rem;
-  background-color: rgb(13, 92, 13);
+  margin: 0.4rem 1rem;
+  background-color: var(--primaryColor);
   color: white;
   text-transform: uppercase;
   padding: 0.3rem 0.5rem;
+  margin-top: 10px;
 }
-
+.btn {
+  letter-spacing: 1.5px;
+}
 .loader,
 .loader:before,
 .loader:after {
@@ -146,6 +179,74 @@ a {
 .loader:after {
   left: 1.5em;
 }
+
+.single-cocktail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.button-back {
+  margin-top: 2rem;
+  padding: 0.5em 2em;
+  background-color: var(--primaryColor);
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: white;
+}
+.drink img {
+  border-radius: 5px;
+  height: 60%;
+  width: 60%;
+  margin: 0 auto;
+}
+.drink {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: flex;
+
+  justify-content: center;
+}
+.drink-info {
+  margin-top: 1.5rem;
+  text-align: left;
+  width: 60%;
+  margin-left: 2em;
+}
+.drink-data {
+  background-color: rgb(117, 247, 117);
+  color: var(--primaryColor);
+  padding: 3px 5px;
+  line-height: 2;
+  font-weight: 600;
+}
+
+.drink-info span {
+  padding: 3px 5px;
+}
+.about {
+  min-height: 100vh;
+  margin: 4rem auto;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.about p {
+  margin-top: 2em;
+  line-height: 1.2;
+  font-weight: 300;
+}
+.no-cocktails {
+  height: 100vh;
+  text-align: center;
+}
+.error {
+  min-height: 100vh;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+}
 @-webkit-keyframes load1 {
   0%,
   80%,
@@ -168,5 +269,62 @@ a {
   40% {
     box-shadow: 0 -2em;
     height: 5em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cocktail {
+    width: 45%;
+  }
+  .drink {
+    width: 90%;
+  }
+  .search-section {
+    width: 70%;
+  }
+  .logo {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .cocktail {
+    width: 90%;
+    height: 470px;
+  }
+  .search-section {
+    width: 75%;
+  }
+  .navbar {
+    width: 95%;
+  }
+  .section-title {
+    margin-bottom: 3.5rem;
+  }
+  .search-section {
+    margin: 5rem auto;
+  }
+  .cocktails-center {
+    justify-content: center;
+  }
+  .cocktail-footer {
+    margin-top: 0.7em;
+  }
+  .about {
+    width: 80%;
+    line-height: 2px;
+  }
+  .navbar-right li {
+    padding: 0 3px;
+  }
+  .logo {
+    width: 60%;
+  }
+  .search-form input {
+    width: 100%;
+  }
+  .search-section-container {
+    display: flex;
+    justify-content: center;
   }
 }

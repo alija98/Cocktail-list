@@ -78,7 +78,7 @@ export default function SingleCocktail() {
         <h2 className="section-title">{name}</h2>
         <div className="drink">
           <img src={image}></img>
-          <div className="drink-info"></div>
+          <div className="drink-info">
           <p>
               <span className="drink-data">Name :</span> {name}
           </p>
@@ -86,7 +86,7 @@ export default function SingleCocktail() {
               <span className="drink-data">Category :</span> {category}
             </p>
             <p>
-              <span className="drink-data">Infor :</span> {info}
+              <span className="drink-data">Info :</span> {info}
             </p>
             <p>
               <span className="drink-data">Glass :</span> {glass}
@@ -97,6 +97,7 @@ export default function SingleCocktail() {
                 return <span key={index}>{item}</span>
               })}
             </p>
+            </div>
         </div>
       </section>
     );

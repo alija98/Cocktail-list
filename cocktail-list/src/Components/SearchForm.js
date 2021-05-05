@@ -17,7 +17,7 @@ function SearchForm() {
     <section className="search-section">
       <div className="search-section-container">
         <form className="search-form" onSubmit={handleSubmit}>
-          <label htmlFor="name">Search your favorite cocktail</label>
+          <label htmlFor="name">Search your favourite cocktail</label>
           <input
             type="text"
             name="name"
